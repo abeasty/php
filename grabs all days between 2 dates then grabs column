@@ -1,0 +1,8 @@
+//SQl to get Data
+//Temp Data
+$sql = "SELECT * FROM tbl_TempHumData Where Location = '$location' AND CONVERT(Date, CAST(DateTime AS date), 101)>='$sdate' AND CONVERT(Date, CAST(DateTime AS date), 101) <='$edate' ORDER BY DataID asc ";
+
+
+while($row = odbc_fetch_array($result)){
+   $data[] =  $row['Temp']. "\n";
+}  
